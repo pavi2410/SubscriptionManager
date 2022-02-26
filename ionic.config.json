@@ -1,0 +1,7 @@
+{
+  "name": "SubscriptionManager",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
