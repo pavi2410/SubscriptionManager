@@ -22,6 +22,7 @@ https://youtu.be/MSehwXorXfI
 
 - [Tilak](https://www.github.com/tilak30)
 - [Pavitra](https://github.com/pavi2410)
+- [Chirag](https://github.com/Chirag036)
 
 
 ## Tech Stack
