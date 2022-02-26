@@ -21,31 +21,30 @@ export default function Stats() {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <div className="flex flex-col items-center py-5 px-2">
-          <IonAvatar className="h-32 w-32">
-            <img
-              src={
-                "https://raw.githubusercontent.com/ionic-team/ionic-docs/main/static/demos/api/avatar/avatar.svg"
-              }
-              alt="icon"
-            />
-          </IonAvatar>
-          <div>
-            <h1 className="text-2xl font-bold">User</h1>
-          </div>
-        </div>
-
-        <hr style={{ borderBottom: "1px solid black" }} className="my-1" />
-
         <IonList>
           <IonItem>
-            <IonLabel>Settings</IonLabel>
+            <IonLabel>Active Subscriptions</IonLabel>
+            <IonLabel slot="end">5</IonLabel>
           </IonItem>
           <IonItem>
-            <IonLabel>Profile</IonLabel>
+            <IonLabel>Total Subscriptions</IonLabel>
+            <IonLabel slot="end">8</IonLabel>
           </IonItem>
           <IonItem>
-            <IonLabel>Saved Cards</IonLabel>
+            <IonLabel>Monthly Cost</IonLabel>
+            <IonLabel slot="end">₹1,800</IonLabel>
+          </IonItem>
+          <IonItem>
+            <IonLabel>Savings</IonLabel>
+            <IonLabel slot="end" color="success">₹100</IonLabel>
+          </IonItem>
+          <IonItem>
+            <IonLabel>Total Saved</IonLabel>
+            <IonLabel slot="end" color="success">₹800</IonLabel>
+          </IonItem>
+          <IonItem>
+            <IonLabel>Saving since</IonLabel>
+            <IonLabel slot="end">26 Feb, 2022</IonLabel>
           </IonItem>
         </IonList>
       </IonContent>
