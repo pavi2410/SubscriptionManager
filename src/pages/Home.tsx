@@ -1,15 +1,17 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,
+import {
+  IonContent, IonHeader, IonPage, IonTitle, IonToolbar,
   IonList, IonItem, IonLabel, IonListHeader,
-IonFab, IonFabButton, IonIcon } from '@ionic/react';
+  IonFab, IonFabButton, IonIcon, IonThumbnail, IonImg
+} from '@ionic/react';
 import { add, arrowForwardCircle } from 'ionicons/icons';
-import './Home.css';
+import { apps } from '../data'
 
 const Home: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Subscription Manager</IonTitle>
+          <IonTitle>Subscrypt</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -18,26 +20,18 @@ const Home: React.FC = () => {
           <IonListHeader>
             <IonLabel>Your Subscriptions</IonLabel>
           </IonListHeader>
-          <IonItem>
-            <IonLabel>Netflix</IonLabel>
-            <IonLabel color="red" slot="end" >2 days left</IonLabel>
-          </IonItem>
-          <IonItem>
-            <IonLabel>Amazon Prime</IonLabel>
-            <IonLabel slot="end" color="success">20 days left</IonLabel>
-          </IonItem>
-          <IonItem >
-            <IonLabel>Sony Liv</IonLabel>
-            <IonLabel slot="end" color="success">15 days left</IonLabel>
-          </IonItem>
-          <IonItem color="danger">
-            <IonLabel>Voot</IonLabel>
-            <IonLabel slot="end" >Expired</IonLabel>
-          </IonItem>
-          <IonItem>
-            <IonLabel>Hotstar</IonLabel>
-            <IonLabel slot="end" color="success">11 days left</IonLabel>
-          </IonItem>
+
+          {
+            apps.map((a, i) => (
+              <IonItem key={i}>
+                <IonThumbnail slot="start" style={{'--ion-size': 'small'}}>
+                  <IonImg src={a.icon} alt="icon" className=""/>
+                </IonThumbnail>
+                <IonLabel>{a.name}</IonLabel>
+                <IonLabel color={a.dayleft > 7 ? 'success' : 'danger'} slot="end">{a.dayleft} days left</IonLabel>
+              </IonItem>
+            ))
+          }
         </IonList>
 
         <IonFab vertical="bottom" horizontal="end" slot="fixed">
@@ -45,7 +39,7 @@ const Home: React.FC = () => {
             <IonIcon icon={add} />
           </IonFabButton>
         </IonFab>
-        
+
       </IonContent>
     </IonPage>
   );
