@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "SubscriptionManager",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}
